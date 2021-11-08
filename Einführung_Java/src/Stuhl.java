@@ -23,4 +23,36 @@ public class Stuhl {
 	}
 	
 	// Methoden
+	public int getAnzahlBeine() {
+		return this.anzahlBeine;
+	}
+	public void setAnzahlBeine(int anzahl) {
+		if(anzahl < 3) {
+			this.anzahlBeine = 3;
+		} else {
+			this.anzahlBeine = anzahl;
+		}
+	}
+
+	public String getMaterial() {
+		return material;
+	}
+
+	public void setMaterial(String material) {
+		this.material = material;
+	}
+
+	public boolean isGepolstert() {
+		return gepolstert;
+	}
+
+	public void setGepolstert(boolean gepolstert) {
+		this.gepolstert = gepolstert;
+	}
+	
+	public String toString() {
+		return "Der Stuhl hat " + this.anzahlBeine + 
+				" Beine und eine Polsterung ist " + this.gepolstert + 
+				" und besteht aus " + this.material;
+	}
 }
