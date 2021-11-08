@@ -1,4 +1,12 @@
 
+/*
+ * Genereller Klassenaufbau
+ * Attribute
+ * Konstruktoren
+ * Getter/Setter
+ * To-String
+ * Eigenen Methoden
+ */
 public class Stuhl {
 	// Datenfelder (Attribute)
 	private int anzahlBeine;
@@ -26,6 +34,12 @@ public class Stuhl {
 	public int getAnzahlBeine() {
 		return this.anzahlBeine;
 	}
+	
+	/**
+	 * Setz die Anzahl der Beine des Stuhl-Objektes. Bei einer Angabe von kleiner als 3, wird
+	 * die Anzahl auf 3 gesetzt.
+	 * @param anzahl  Die Anzahl der Beine als Integer
+	 */
 	public void setAnzahlBeine(int anzahl) {
 		if(anzahl < 3) {
 			this.anzahlBeine = 3;
@@ -33,7 +47,11 @@ public class Stuhl {
 			this.anzahlBeine = anzahl;
 		}
 	}
-
+	
+	/**
+	 * Gibt das Material zurück.
+	 * @return material als String
+	 */
 	public String getMaterial() {
 		return material;
 	}
@@ -49,10 +67,31 @@ public class Stuhl {
 	public void setGepolstert(boolean gepolstert) {
 		this.gepolstert = gepolstert;
 	}
+
+//	@Override
+//	public String toString() {
+//		return "Stuhl [anzahlBeine=" + anzahlBeine + ", material=" + material + ", gepolstert=" + gepolstert + "]";
+//	}
 	
 	public String toString() {
+		String polsterung = "nicht gepolstert";
+		if(this.gepolstert) {
+			polsterung = "gepolstert";
+		} else {
+			polsterung = "nicht gepolstert";
+		}
+		
+		// Ternary Operator
+		// Variable = Bedingung ? True : False
+		// Wenn Bedingung true ist, dann wird der True-Teil genommen
+		// Wenn Bedingung false ist, dann wird der False-Teil genommen
+		polsterung = this.gepolstert ? "gepolstert" : "nicht gepolstert";
+		
 		return "Der Stuhl hat " + this.anzahlBeine + 
-				" Beine und eine Polsterung ist " + this.gepolstert + 
+				" Beine und ist " + polsterung +
 				" und besteht aus " + this.material;
 	}
+	
+	
+	
 }

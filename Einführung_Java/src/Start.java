@@ -13,8 +13,11 @@ public class Start {
 		stuhl1.setAnzahlBeine(12);
 		stuhl4.setMaterial("Holz");
 		
-		System.out.println("Stuhl 1 = " + stuhl1.toString());
-		
+		System.out.println("Stuhl 1 = " + stuhl1);
+		System.out.println("Stuhl 2 = " + stuhl2);
+		System.out.println("Stuhl 3 = " + stuhl3);
+		System.out.println("Stuhl 4 = " + stuhl4);
+		System.out.println(stuhl1.getMaterial());
 		int x = 5;
 	}
 	
