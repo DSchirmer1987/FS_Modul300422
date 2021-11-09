@@ -22,7 +22,8 @@ public class Application {
 		System.out.println("Rechteck r1 hat den Umfang " + r1.getUmfang() + "cm");
 		System.out.println("Rechteck r2 hat die Fläche " + r2.getFlaeche() + "cm²");
 		System.out.println("Rechteck r2 hat den Umfang " + r2.getUmfang() + "cm");
-		r2.setSeiteA(25);
+		
+		System.out.println(r1);
 	}
 
 }
