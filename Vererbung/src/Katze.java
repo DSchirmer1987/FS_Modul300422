@@ -2,7 +2,8 @@
 public class Katze extends Tier{
 	
 	public Katze() {
-		super();
+		super("Mieze", 5, 6.0);
+		System.out.println("Katze-Objekt erstellt.");
 	}
 	
 	public void miauen() {

@@ -9,6 +9,7 @@ public class Tier {
 		this.name = name;
 		this.alter = alter;
 		this.gewicht = gewicht;
+		System.out.println("Tier-Objekt erstellt.");
 	}
 	
 	public Tier() {
