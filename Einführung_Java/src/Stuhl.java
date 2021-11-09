@@ -7,6 +7,7 @@
  * To-String
  * Eigenen Methoden
  */
+
 public class Stuhl {
 	// Datenfelder (Attribute)
 	private int anzahlBeine;
