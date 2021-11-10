@@ -1,5 +1,5 @@
 
-public class Pflanze {
+public class Pflanze implements IFressbar{
 	private String bluetenfarbe;
 	private String blattform;
 	private boolean essbar;
@@ -9,5 +9,11 @@ public class Pflanze {
 		this.bluetenfarbe = farbe;
 		this.blattform = form;
 		this.essbar = essbar;
+	}
+
+	@Override
+	public void wirdGefressen() {
+		System.out.println(this.getClass().getName() + " wird gefressen");
+		
 	}
 }

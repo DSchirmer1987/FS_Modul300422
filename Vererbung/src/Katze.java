@@ -9,4 +9,10 @@ public class Katze extends Tier{
 	public void miauen() {
 		System.out.println("Katze miaut");
 	}
+
+	@Override
+	public void fressen() {
+		System.out.println("Die Katze frisst");
+		
+	}
 }

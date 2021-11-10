@@ -9,4 +9,10 @@ public class Hund extends Tier{
 	public Hund() {
 		super();
 	}
+
+	@Override
+	public void fressen() {
+		System.out.println("Der Hund frisst.");
+		this.getNahrung().wirdGefressen();
+	}
 }
