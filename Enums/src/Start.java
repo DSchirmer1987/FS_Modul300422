@@ -11,6 +11,7 @@ public class Start {
 			System.out.println("Anteil Grün: " + tmpC.getGreen());
 			System.out.println("Anteil Blau: " + tmpC.getBlue());
 		}
+		
 	}
 
 }
