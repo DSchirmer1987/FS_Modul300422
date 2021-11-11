@@ -20,7 +20,7 @@ public class Fahrzeug {
 		this.maxGeschwindigkeit = maxGeschwindigkeit;
 		this.anzahlRader = anzahlRaeder;
 	}
-
+	
 	public double getPosition() {
 		return position;
 	}

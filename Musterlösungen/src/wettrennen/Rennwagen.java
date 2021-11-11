@@ -11,6 +11,4 @@ public class Rennwagen extends Auto{
 	public String toString() {
 		return "Rennwagen [toString()=" + super.toString() + "]";
 	}
-	
-	
 }
