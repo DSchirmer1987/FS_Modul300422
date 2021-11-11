@@ -19,6 +19,10 @@ public class Eingabe {
 		zahl = eingabe.nextInt();
 		System.out.println("Ihre Zahl ist: " + zahl);
 		
+		// System.console() - Nur ausserhalb einer IDE möglich
+//		System.out.println("Bitte etwas eingeben");
+//		String consoleInput = System.console().readLine();
+//		System.out.println(consoleInput);
 		
 		/*
 		 * Zweite Möglichkeit zur Eingabe
