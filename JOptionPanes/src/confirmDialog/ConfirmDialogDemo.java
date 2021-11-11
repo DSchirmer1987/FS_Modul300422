@@ -1,5 +1,7 @@
 package confirmDialog;
 
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class ConfirmDialogDemo {
@@ -45,6 +47,28 @@ public class ConfirmDialogDemo {
 	 */
 	
 	public static void simpleConfirmDialog() {
-		JOptionPane.showConfirmDialog(null, "Mögen Sie Java?");
+		int input = JOptionPane.showConfirmDialog(null, "Mögen Sie Java?");
+		System.out.println(input);
+	}
+	
+	public static void confirmDialogTitleButtons() {
+		int input = JOptionPane.showConfirmDialog(null, "Mögen Sie Java", "Java-Frage", JOptionPane.DEFAULT_OPTION);
+		System.out.println(input);
+	}
+	
+	public static void confirmDialogTitleButtonsMessageType() {
+		int input = JOptionPane.showConfirmDialog(null, "Mögen Sie Java?", "Java-Frage", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+		System.out.println(input);
+	}
+	
+	public static void confirmDialoogTitleButtonsMessageTypeIcon() {
+		ImageIcon icon = new ImageIcon("src/icon.png");
+		// Resize in Java
+		Image image = icon.getImage();
+		Image newImage = image.getScaledInstance(64, 64, Image.SCALE_SMOOTH);
+		icon = new ImageIcon(newImage);
+
+		int input = JOptionPane.showConfirmDialog(null, "Mögen Sie Java?", "Java-Frage", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, icon);
+		System.out.println(input);
 	}
 }
