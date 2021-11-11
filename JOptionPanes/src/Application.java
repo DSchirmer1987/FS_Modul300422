@@ -13,7 +13,9 @@ public class Application {
 		// OptionDialogs
 //		OptionDialogDemo.optionDialogStringOptions();
 //		OptionDialogDemo.optionDialogIntegerOptions();
-		OptionDialogDemo.optionDialogObjectOptions();
+//		OptionDialogDemo.optionDialogObjectOptions();
+		
+		
 	}
 
 }
