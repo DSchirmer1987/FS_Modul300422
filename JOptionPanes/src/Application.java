@@ -1,4 +1,5 @@
 import confirmDialog.ConfirmDialogDemo;
+import inputDialog.InputDialogDemo;
 import optionDialog.OptionDialogDemo;
 
 public class Application {
@@ -15,6 +16,10 @@ public class Application {
 //		OptionDialogDemo.optionDialogIntegerOptions();
 //		OptionDialogDemo.optionDialogObjectOptions();
 		
+		// InputDialogs
+//		InputDialogDemo.simpleInput();
+//		InputDialogDemo.simpleDropdownInput();
+		InputDialogDemo.simpleDropdownInputInteger();
 		
 	}
 

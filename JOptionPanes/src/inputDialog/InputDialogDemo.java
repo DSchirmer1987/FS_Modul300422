@@ -1,5 +1,7 @@
 package inputDialog;
 
+import javax.swing.JOptionPane;
+
 public class InputDialogDemo {
 	/*
 	 * InputDialog
@@ -27,4 +29,26 @@ public class InputDialogDemo {
 	 * - Inputfeld mit vorgegebenen Werten - Sozusagen ein Dropdown Input mit den Optionen als Object[] und die Startwahl als Object
 	 * 
 	 */
+	
+	public static void simpleInput() {
+		String input = JOptionPane.showInputDialog("Bitte etwas eingeben.");
+		System.out.println(input);
+	}
+	
+	public static void simpleInputInital() {
+		String input = JOptionPane.showInputDialog("Bitte etwas eingeben", "42");
+		System.out.println(input);
+	}
+	
+	public static void simpleDropdownInput() {
+		String options[] = {"42", "Hallo Welt", "Java ist toll", "Ich mag Kekse"};
+		String input = (String) JOptionPane.showInputDialog(null, "Wähle etwas aus", "Auswahl", 0, null, options, options[0]);
+		System.out.println(input);
+	}
+	
+	public static void simpleDropdownInputInteger() {
+		Integer options[] = {123, 456, 789, 134, 584};
+		Integer input = (Integer) JOptionPane.showInputDialog(null, "Wähle etwas aus", "Auswahl", 0, null, options, options[0]);
+		System.out.println(input);
+	}
 }
