@@ -1,5 +1,6 @@
 import confirmDialog.ConfirmDialogDemo;
 import inputDialog.InputDialogDemo;
+import messageDialog.MessageDialogDemo;
 import optionDialog.OptionDialogDemo;
 
 public class Application {
@@ -19,8 +20,12 @@ public class Application {
 		// InputDialogs
 //		InputDialogDemo.simpleInput();
 //		InputDialogDemo.simpleDropdownInput();
-		InputDialogDemo.simpleDropdownInputInteger();
+//		InputDialogDemo.simpleDropdownInputInteger();
 		
+		// MessageDialogs
+		MessageDialogDemo.simpleMessage();
+		MessageDialogDemo.simpleMessageTitelMessageType();
+		MessageDialogDemo.simpleMessageTitelMessageTypeIcon();
 	}
 
 }
