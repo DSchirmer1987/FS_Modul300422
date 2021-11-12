@@ -42,5 +42,9 @@ public class Hilfsarbeiter extends Mitarbeiter {
 				+ ", getPersonalNr()=" + getPersonalNr() + ", getName()=" + getName() + ", getDatumEintritt()="
 				+ getDatumEintritt() + ", getMonatsLohn()=" + getMonatsLohn() + "]";
 	}
+	
+	public void monatslohnHilfsarbeiter(double stundenlohn, double anzahlstunden, double ueberstundenzuschlag, double anzahlueberstunden) {
+		this.setMonatsLohn( stundenlohn*anzahlstunden + ueberstundenzuschlag*anzahlueberstunden);	
+	}
 
 }
