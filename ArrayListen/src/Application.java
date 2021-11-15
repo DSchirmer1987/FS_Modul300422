@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Application {
+	public static ArrayList<String> teilnehmer;
 
 	public static void main(String[] args) {
 		// Deklaration von Arrays
@@ -55,5 +56,9 @@ public class Application {
 		System.out.println(doppelteListe);
 		doppelteListe.get(0).add(5);
 		System.out.println(doppelteListe);
+	}
+	
+	public static void addRennschnecke(String schnecke) {
+		teilnehmer.add(schnecke);
 	}
 }
