@@ -1,6 +1,7 @@
 package main;
 import buch.Buch;
 import mitarbeiter.Hilfsarbeiter;
+import schneckenrennen.Wettbuero;
 
 public class Main {
 
@@ -11,9 +12,16 @@ public class Main {
 //		System.out.println(b1);
 //		System.out.println(b2);
 		
-		Hilfsarbeiter ha1 = new Hilfsarbeiter(123, "Harald", "26.12.1688", 2500);
-		ha1.monatslohnHilfsarbeiter(12.50, 160, 1.50, 25);
-		System.out.println(ha1);
+//		Hilfsarbeiter ha1 = new Hilfsarbeiter(123, "Harald", "26.12.1688", 2500);
+//		ha1.monatslohnHilfsarbeiter(12.50, 160, 1.50, 25);
+//		System.out.println(ha1);
+		
+		Wettbuero wb = new Wettbuero();
+		for(int i = 1; i < 6; i++) {
+			wb.wetteAnnehmen("TurboSchnecki_" + i, i * 3, "Spieler_" + i);
+		}
+		wb.rennenDurchfuehren();
+		System.out.println(wb);
 	}
 
 }
