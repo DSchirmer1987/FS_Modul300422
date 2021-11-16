@@ -34,6 +34,15 @@ public class Rennschnecke {
 //				repeat = false;
 //			}
 //		}
+		
+		// Schnecke kriecht innerhalb der range von 0.0 bis vMax
+//		double min = 0.0;
+//		double max = vMax;
+//		Random random = new Random();
+//		weg += min + (max - min) * random.nextDouble();
+		
+		// Ab Java 17
+//		weg += random.nextDouble(vMax);
 
 	}
 
