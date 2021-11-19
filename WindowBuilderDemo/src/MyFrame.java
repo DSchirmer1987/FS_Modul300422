@@ -16,12 +16,17 @@ import java.awt.event.ActionEvent;
 import javax.swing.Action;
 import javax.swing.border.LineBorder;
 import javax.swing.border.CompoundBorder;
+import javax.swing.JTextPane;
+import javax.swing.JButton;
 
 public class MyFrame extends JFrame {
 
 	private JPanel contentPane;
 	private final Action action = new SwingAction();
 	private JLabel lbl_north;
+	private JTextPane textPane;
+	private JToggleButton tgl_btn_lbl_north;
+	private JButton btnNewButton;
 
 	/**
 	 * Launch the application.
@@ -58,9 +63,15 @@ public class MyFrame extends JFrame {
 		lbl_north.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lbl_north, BorderLayout.NORTH);
 		
-		JToggleButton tgl_btn_lbl_north = new JToggleButton("Mach das Label Blau");
+		tgl_btn_lbl_north = new JToggleButton("Mach das Label Blau");
 		tgl_btn_lbl_north.setAction(action);
 		contentPane.add(tgl_btn_lbl_north, BorderLayout.CENTER);
+		
+		textPane = new JTextPane();
+		contentPane.add(textPane, BorderLayout.SOUTH);
+		
+		btnNewButton = new JButton("New button");
+		contentPane.add(btnNewButton, BorderLayout.WEST);
 	}
 
 	private class SwingAction extends AbstractAction {
