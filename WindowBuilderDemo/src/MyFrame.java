@@ -14,6 +14,8 @@ import javax.swing.AbstractButton;
 
 import java.awt.event.ActionEvent;
 import javax.swing.Action;
+import javax.swing.border.LineBorder;
+import javax.swing.border.CompoundBorder;
 
 public class MyFrame extends JFrame {
 
@@ -49,6 +51,7 @@ public class MyFrame extends JFrame {
 		setContentPane(contentPane);
 		
 		lbl_north = new JLabel("Ich bin ein Label");
+		lbl_north.setBorder(new CompoundBorder(new LineBorder(new Color(0, 255, 0)), new LineBorder(new Color(255, 0, 0))));
 		lbl_north.setForeground(Color.RED);
 		lbl_north.setBackground(Color.BLUE);
 		lbl_north.setFont(new Font("Tahoma", Font.PLAIN, 15));

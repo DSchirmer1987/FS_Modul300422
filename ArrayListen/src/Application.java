@@ -56,6 +56,13 @@ public class Application {
 		System.out.println(doppelteListe);
 		doppelteListe.get(0).add(5);
 		System.out.println(doppelteListe);
+		
+		System.out.println("======");
+		System.out.println("= Fischladen =");
+		String ausgabe = "==============\n"
+				+ 		 "= Fischladen =\n"
+				+		 "==============";
+		System.out.println(ausgabe);
 	}
 	
 	public static void addRennschnecke(String schnecke) {
