@@ -10,6 +10,11 @@ public class Application {
 		// Initialisierung von Arrays
 		zahlen = new int[5];
 		zahlen = new int[] {1, 3, 5, 7, 9};
+		for (int i : zahlen) {
+			if(i == 6) {
+				System.out.println("6 ist vorhanden.");
+			}
+		}
 		
 		// Deklaration und Initialisierung
 		int nummern[] = new int[5];
@@ -41,6 +46,8 @@ public class Application {
 		System.out.println(zahlenListe);
 		zahlenListe.remove(8);
 		System.out.println(zahlenListe);
+		System.out.println("Contains: " + zahlenListe.contains(42));
+		System.out.println("Position: " + zahlenListe.indexOf(42));
 		
 		ArrayList<Object> liste = new ArrayList<>();
 		liste.add("Hallo");
