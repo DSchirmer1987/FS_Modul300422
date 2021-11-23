@@ -18,14 +18,14 @@ public class Application {
 //		OptionDialogDemo.optionDialogObjectOptions();
 		
 		// InputDialogs
-//		InputDialogDemo.simpleInput();
+		InputDialogDemo.simpleInput();
 //		InputDialogDemo.simpleDropdownInput();
 //		InputDialogDemo.simpleDropdownInputInteger();
 		
 		// MessageDialogs
-		MessageDialogDemo.simpleMessage();
-		MessageDialogDemo.simpleMessageTitelMessageType();
-		MessageDialogDemo.simpleMessageTitelMessageTypeIcon();
+//		MessageDialogDemo.simpleMessage();
+//		MessageDialogDemo.simpleMessageTitelMessageType();
+//		MessageDialogDemo.simpleMessageTitelMessageTypeIcon();
 	}
 
 }

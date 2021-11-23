@@ -32,6 +32,12 @@ public class InputDialogDemo {
 	
 	public static void simpleInput() {
 		String input = JOptionPane.showInputDialog("Bitte etwas eingeben.");
+		int a;
+		try {
+			a = Integer.parseInt(input);
+		} catch(Exception e) {
+			JOptionPane.showMessageDialog(null, "Ungültige Eingabe");
+		}
 		System.out.println(input);
 	}
 	
