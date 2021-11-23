@@ -12,17 +12,21 @@ import project_kassenbon.model.Kassenbon;
 import project_kassenbon.view.ArtikelFrame;
 import project_kassenbon.view.KassenFrame;
 import project_kassenbon.view.KassenbonFrame;
+import project_kassenbon.view.NewArtikelFrame;
 
 public class GUI_Controller {
 	
 	private final Action artikelFrameAction = new ArtikelFrameAction();
 	private final Action addArtikelKassenbon = new AddArtikelKassenbon();
 	private final Action showKassenbonFrame = new ShowKassenbonFrame();
+	private final Action showNewArtikelFrame = new ShowNewArtikelFrame();
+	private final Action addArtikelArtikelListe = new AddArtikelArtikelListe();
 	private Kassenbon kb;
 	private Artikelliste al;
 	private KassenFrame kf;
 	private ArtikelFrame af;
 	private KassenbonFrame kbf;
+	private NewArtikelFrame naf;
 	
 	public GUI_Controller() {
 		EventQueue.invokeLater(new Runnable() {
@@ -50,10 +54,14 @@ public class GUI_Controller {
 		
 		af = new ArtikelFrame();
 		af.getBtn_addArtikel().setAction(addArtikelKassenbon);
-		DefaultComboBoxModel<Object> model = new DefaultComboBoxModel<>(al.getListe().toArray());
-		af.getcBox_artikel().setModel(model);
+//		DefaultComboBoxModel<Object> model = new DefaultComboBoxModel<>(al.getListe().toArray());
+//		af.getcBox_artikel().setModel(model);
+		setComboBoxModel();
+		af.getBtn_newArt().setAction(showNewArtikelFrame);
 		
 		kbf = new KassenbonFrame();
+		
+//		naf = new NewArtikelFrame();
 	}
 	
 	private void generateArtikels() {
@@ -63,6 +71,11 @@ public class GUI_Controller {
 	
 	private void setKassenText() {
 		kf.getTxtPane_kassenbon().setText("Anzahl Artikel: " + kb.getListe().size() + System.lineSeparator()+ System.lineSeparator() + "Gesamtsumme €: " + kb.getFormattedSumme());
+	}
+	
+	private void setComboBoxModel() {
+		DefaultComboBoxModel<Object> model = new DefaultComboBoxModel<>(al.getListe().toArray());
+		af.getcBox_artikel().setModel(model);
 	}
 	
 	private class ArtikelFrameAction extends AbstractAction{
@@ -109,6 +122,36 @@ public class GUI_Controller {
 			kbf.getTextPane().setText(kb.toString());
 			kbf.setVisible(true);
 		}
-		
+	}
+	
+	private class ShowNewArtikelFrame extends AbstractAction{
+		public ShowNewArtikelFrame() {
+			putValue(NAME, "+");
+			putValue(SHORT_DESCRIPTION, "Neuen Artikel hinzufügen");
+		}
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			naf = new NewArtikelFrame();
+			naf.getBtn_addArt().setAction(addArtikelArtikelListe);
+			naf.setVisible(true);	
+		}
+	}
+	
+	private class AddArtikelArtikelListe extends AbstractAction{
+		public AddArtikelArtikelListe() {
+			putValue(NAME, "Artikel zur Artikelliste");
+			putValue(SHORT_DESCRIPTION, "Den Artikel zu der Artikelliste hinzufügen");
+		}
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			int artNummer = Integer.parseInt(naf.getTxt_artNum().getText());
+			String artBez = naf.getTxt_artBez().getText();
+			double preis = Double.parseDouble(naf.getTxt_artPreis().getText());
+			al.addArtikel(artNummer, artBez, preis);
+			naf.dispose();
+//			DefaultComboBoxModel<Object> model = new DefaultComboBoxModel<>(al.getListe().toArray());
+//			af.getcBox_artikel().setModel(model);
+			setComboBoxModel();
+		}
 	}
 }

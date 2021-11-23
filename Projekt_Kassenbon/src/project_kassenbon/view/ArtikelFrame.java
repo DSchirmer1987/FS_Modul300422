@@ -15,6 +15,8 @@ import javax.swing.SwingConstants;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.DropMode;
+import javax.swing.JSplitPane;
+import java.awt.Dimension;
 
 public class ArtikelFrame extends JFrame {
 
@@ -22,6 +24,8 @@ public class ArtikelFrame extends JFrame {
 	private JFormattedTextField txtField_menge;
 	private JComboBox<Object> cBox_artikel;
 	private JButton btn_addArtikel;
+	private JSplitPane splitPane;
+	private JButton btn_newArt;
 	
 	/**
 	 * Create the frame.
@@ -39,8 +43,16 @@ public class ArtikelFrame extends JFrame {
 		lbl_artNummer.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(lbl_artNummer);
 		
+		splitPane = new JSplitPane();
+		contentPane.add(splitPane);
+		
 		cBox_artikel = new JComboBox<Object>();
-		contentPane.add(cBox_artikel);
+		cBox_artikel.setMinimumSize(new Dimension(175, 21));
+		splitPane.setLeftComponent(cBox_artikel);
+		
+		btn_newArt = new JButton("New button");
+		btn_newArt.setMinimumSize(new Dimension(50, 21));
+		splitPane.setRightComponent(btn_newArt);
 		
 		JLabel lbl_Menge = new JLabel("Menge");
 		lbl_Menge.setHorizontalAlignment(SwingConstants.CENTER);
@@ -63,6 +75,10 @@ public class ArtikelFrame extends JFrame {
 
 	public JButton getBtn_addArtikel() {
 		return btn_addArtikel;
+	}
+
+	public JButton getBtn_newArt() {
+		return btn_newArt;
 	}
 
 	public JPanel getContentPane() {
