@@ -67,7 +67,7 @@ public class Kassenbon {
 	 */
 	public void addEintrag(KassenbonEintrag eintrag) {
 		this.liste.add(eintrag);
-		this.summe =+ eintrag.getPreis() * eintrag.getMenge();
+		this.summe += eintrag.getPreis() * eintrag.getMenge();
 	}
 	
 	/**
@@ -77,7 +77,7 @@ public class Kassenbon {
 	 */
 	public void addEintrag(Artikel artikel, int menge) {
 		this.liste.add(new KassenbonEintrag(artikel, menge));
-		this.summe =+ artikel.getPreis() * menge;
+		this.summe += artikel.getPreis() * menge;
 	}
 	
 	/**
@@ -106,5 +106,28 @@ public class Kassenbon {
 			output += "=";
 		}
 		return output;
+	}
+	
+	/**
+	 * Gibt die Summe als formatierten String zurück
+	 * @return - String
+	 */
+	public String getFormattedSumme() {
+		return String.format("%.2f€", this.summe);
+	}
+	
+	@Override
+	public String toString() {
+		String output = this.getFormattedLaden();
+		output += System.lineSeparator();
+		for (KassenbonEintrag eintrag : liste) {
+			output += eintrag.toString();
+			output += System.lineSeparator();
+		}
+		output += System.lineSeparator();
+		output += "\t\t=====" + System.lineSeparator();
+		output += "Summe EUR\t" + String.format("%.2f€", this.summe) + System.lineSeparator();
+		output += "\t\t=====" + System.lineSeparator();
+		return output; 
 	}
 }

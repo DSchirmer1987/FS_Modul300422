@@ -69,4 +69,9 @@ public class Artikel {
 	public void setNummer(int nummer) {
 		this.nummer = nummer;
 	}
+	
+	@Override
+	public String toString() {
+		return this.nummer + " - " + this.bezeichnung + " - " + String.format("%.2f€", this.preis);
+	}
 }

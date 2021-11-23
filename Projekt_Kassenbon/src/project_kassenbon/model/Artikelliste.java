@@ -42,4 +42,32 @@ public class Artikelliste {
 	public void addArtikel(int nummer, String bezeichnung, double preis) {
 		this.liste.add(new Artikel(nummer, bezeichnung, preis));
 	}
+	
+	/**
+	 * Sucht einen Artikel in der Liste
+	 * @param nummer - Die Artikelnummer
+	 * @return - Boolean
+	 */
+	public boolean searchArtikel(int nummer) {
+		for (Artikel artikel : liste) {
+			if(artikel.getNummer() == nummer) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * Sucht einen Artikel aus der Liste und gibt diesen zurück
+	 * @param nummer - Die Artikelnummer
+	 * @return - Artikel
+	 */
+	public Artikel getArtikelFromList(int nummer) {
+		for (Artikel artikel : liste) {
+			if(artikel.getNummer() == nummer) {
+				return artikel;
+			}
+		}
+		return null;
+	}
 }

@@ -1,16 +1,13 @@
 package project_kassenbon;
 
-import java.util.ArrayList;
-
-import project_kassenbon.model.Kassenbon;
-import project_kassenbon.model.KassenbonEintrag;
+import project_kassenbon.controller.ConsoleController;
+import project_kassenbon.controller.GUI_Controller;
 
 public class Application {
 
 	public static void main(String[] args) {
-		Kassenbon kb = new Kassenbon();
-		System.out.println(kb.getFormattedLaden());
-		
+//		ConsoleController cc = new ConsoleController();
+		GUI_Controller gc = new GUI_Controller();
 	}
 
 }

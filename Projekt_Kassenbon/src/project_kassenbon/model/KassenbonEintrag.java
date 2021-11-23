@@ -37,4 +37,9 @@ public class KassenbonEintrag extends Artikel{
 		this.menge = menge;
 	}
 	
+	@Override
+	public String toString() {
+		return this.getBezeichnung() + System.lineSeparator() + " x" + this.getMenge() + "\t\t" + String.format("%.2f€", this.getPreis());
+	}
+	
 }
