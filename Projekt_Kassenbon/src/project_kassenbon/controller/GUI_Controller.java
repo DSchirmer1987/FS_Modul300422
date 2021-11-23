@@ -90,7 +90,7 @@ public class GUI_Controller {
 			int menge = Integer.parseInt(af.getTxtField_menge().getText());
 			if(menge > 0 ) {
 				kb.addEintrag(al.getListe().get(index), menge);
-				af.setVisible(false);
+				af.dispose();
 			} else {
 				JOptionPane.showMessageDialog(af, "Bitte eine Menge über 0 eingeben!");
 			}
