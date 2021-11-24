@@ -1,6 +1,8 @@
 package project_kassenbon.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 
 /**
  * Die Klasse die den Kassenbon darstellt.
@@ -9,7 +11,7 @@ import java.util.ArrayList;
  * @author CC_Dozent
  *
  */
-public class Kassenbon {
+public class Kassenbon implements IBon<KassenbonEintrag, String, String[]>{
 	private String[] laden = new String[3];
 	private ArrayList<KassenbonEintrag> liste;
 	private double summe;
@@ -129,5 +131,35 @@ public class Kassenbon {
 		output += "Summe EUR\t" + String.format("%.2f€", this.summe) + System.lineSeparator();
 		output += "\t\t=====" + System.lineSeparator();
 		return output; 
+	}
+
+	@Override
+	public void setVerkaeufer(String element) {
+		// TODO Auto-generated method stub	
+	}
+
+	@Override
+	public void setLaden(String[] element) {
+		this.laden = element;
+	}
+
+	@Override
+	public Collection<KassenbonEintrag> getEintraege() {
+		return this.liste;
+	}
+
+	@Override
+	public String verkaueferToString() {
+		return "";
+	}
+
+	@Override
+	public String ladenToString() {
+		return this.getFormattedLaden();
+	}
+
+	@Override
+	public String bonToString() {
+		return this.toString();
 	}
 }

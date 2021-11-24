@@ -8,7 +8,9 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import project_kassenbon.model.Artikel;
 import project_kassenbon.model.Artikelliste;
+import project_kassenbon.model.IBon;
 import project_kassenbon.model.Kassenbon;
+import project_kassenbon.model.KassenbonEintrag;
 import project_kassenbon.view.ArtikelFrame;
 import project_kassenbon.view.KassenFrame;
 import project_kassenbon.view.KassenbonFrame;
@@ -21,7 +23,8 @@ public class GUI_Controller {
 	private final Action showKassenbonFrame = new ShowKassenbonFrame();
 	private final Action showNewArtikelFrame = new ShowNewArtikelFrame();
 	private final Action addArtikelArtikelListe = new AddArtikelArtikelListe();
-	private Kassenbon kb;
+//	private Kassenbon kb;
+	private IBon<KassenbonEintrag, String, String[]> kb;
 	private Artikelliste al;
 	private KassenFrame kf;
 	private ArtikelFrame af;
@@ -47,7 +50,7 @@ public class GUI_Controller {
 		generateArtikels();
 		
 		kf = new KassenFrame();
-		kf.getTxtPane_laden().setText(kb.getFormattedLaden());
+		kf.getTxtPane_laden().setText(kb.ladenToString());
 		kf.getBtn_art().setAction(artikelFrameAction);
 		kf.getBtn_kassenbon().setAction(showKassenbonFrame);
 		setKassenText();
@@ -70,7 +73,7 @@ public class GUI_Controller {
 	}
 	
 	private void setKassenText() {
-		kf.getTxtPane_kassenbon().setText("Anzahl Artikel: " + kb.getListe().size() + System.lineSeparator()+ System.lineSeparator() + "Gesamtsumme €: " + kb.getFormattedSumme());
+		kf.getTxtPane_kassenbon().setText("Anzahl Artikel: " + kb.getEintraege().size() + System.lineSeparator()+ System.lineSeparator() + "Gesamtsumme €: " + ((Kassenbon) kb).getFormattedSumme());
 	}
 	
 	private void setComboBoxModel() {
@@ -102,7 +105,7 @@ public class GUI_Controller {
 			int index = af.getcBox_artikel().getSelectedIndex();
 			int menge = Integer.parseInt(af.getTxtField_menge().getText());
 			if(menge > 0 ) {
-				kb.addEintrag(al.getListe().get(index), menge);
+				kb.addEintrag(new KassenbonEintrag(al.getListe().get(index), menge));
 				af.dispose();
 			} else {
 				JOptionPane.showMessageDialog(af, "Bitte eine Menge über 0 eingeben!");
