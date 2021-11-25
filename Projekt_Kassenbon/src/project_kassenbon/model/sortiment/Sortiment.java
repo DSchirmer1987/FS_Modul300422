@@ -26,11 +26,13 @@ public class Sortiment {
 	}
 	
 	public void hinzufuegen(Produkt produkt) {
+		// Das hinzufügen soll über den Speicher geregelt werden, daher hier der aufruf der hinzufügen-Methode des Speichers
 		this.speicher.produktHinzufuegen(produkt);
 		this.neuladen();
 	}
 	
 	public void entfernen(Produkt produkt) {
+		// Das entfernen soll über den Speicher geregelt werden, daher hier der aufruf der entfernen-Methode des Speichers
 		this.speicher.produktEntfernen(produkt);
 		this.neuladen();
 	}

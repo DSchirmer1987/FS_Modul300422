@@ -54,6 +54,13 @@ public class SortimentSim implements ISortimentSpeicher{
 		
 	}
 
+	/**
+	 * Fügt ein Produkt dem Sortiment hinzu.
+	 * 
+	 * Intern wird das Array zu einer Liste umgewandelt, damit ein einfaches entfernen möglich ist.
+	 * Dank der Liste muss nicht das gesamte Array iteriert werden, sondern einfach die remove()-Methode angesprochen werden
+	 * Danach wird die Liste wieder zu einem Array umgewandelt und zurückgegeben.
+	 */
 	@Override
 	public void produktEntfernen(Produkt produkt) {
 		// Umwandeln in eine Liste - Problematik List ist ein Interface. List braucht einen vollwertigen Typen.
