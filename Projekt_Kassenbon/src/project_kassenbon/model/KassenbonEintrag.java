@@ -1,12 +1,14 @@
 package project_kassenbon.model;
 
+import project_kassenbon.model.sortiment.Produkt;
+
 /**
  * Die Klasse für die einzelnen Einträge auf dem Kassenbon
  * @author CC_Dozent
  * @see Artikel
  *
  */
-public class KassenbonEintrag extends Artikel{
+public class KassenbonEintrag extends /*Artikel*/ Produkt{
 	private int menge;
 	
 	/**
@@ -16,8 +18,15 @@ public class KassenbonEintrag extends Artikel{
 	 * 
 	 * @see #Artikel(int, String, double)
 	 */
-	public KassenbonEintrag(Artikel artikel, int menge) {
-		super(artikel.getNummer(), artikel.getBezeichnung(), artikel.getPreis());
+	// Alter Konstruktor, der noch mit Artikel arbeitete
+//	public KassenbonEintrag(Artikel artikel, int menge) {
+//		super(artikel.getNummer(), artikel.getBezeichnung(), artikel.getPreis());
+//		this.menge = menge;
+//	}
+	
+	// Neuer Konstruktor, der mit Produkt aus Sortiment arbeitet
+	public KassenbonEintrag(Produkt produkt, int menge) {
+		super(produkt.getBezeichnung(), produkt.getPreis(), produkt.getId());
 		this.menge = menge;
 	}
 	

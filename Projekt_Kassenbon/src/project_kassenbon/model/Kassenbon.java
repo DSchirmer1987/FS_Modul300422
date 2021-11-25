@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
+import project_kassenbon.model.sortiment.Produkt;
+
 /**
  * Die Klasse die den Kassenbon darstellt.
  * Beinhaltet eine ArrayList für die einzelnen Einträge
@@ -77,7 +79,7 @@ public class Kassenbon implements IBon<KassenbonEintrag, String, String[]>{
 	 * @param artikel - Der {@code Artikel}
 	 * @param menge - Die Menge als {@code Integer}
 	 */
-	public void addEintrag(Artikel artikel, int menge) {
+	public void addEintrag(/*Artikel*/ Produkt artikel, int menge) {
 		this.liste.add(new KassenbonEintrag(artikel, menge));
 		this.summe += artikel.getPreis() * menge;
 	}
