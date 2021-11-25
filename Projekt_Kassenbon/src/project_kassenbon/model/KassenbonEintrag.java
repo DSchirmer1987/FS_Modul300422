@@ -24,6 +24,12 @@ public class KassenbonEintrag extends /*Artikel*/ Produkt{
 //		this.menge = menge;
 //	}
 	
+	// Konstruktor mit Artikeln, jedoch ohne Vererbung von Artikeln
+	public KassenbonEintrag(Artikel artikel, int menge) {
+		super(artikel.getBezeichnung(), artikel.getPreis(), artikel.getNummer());
+		this.menge = menge;
+	}
+	
 	// Neuer Konstruktor, der mit Produkt aus Sortiment arbeitet
 	public KassenbonEintrag(Produkt produkt, int menge) {
 		super(produkt.getBezeichnung(), produkt.getPreis(), produkt.getId());

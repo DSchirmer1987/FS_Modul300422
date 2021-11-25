@@ -13,8 +13,8 @@ public class Application {
 
 	public static void main(String[] args) {
 //		ConsoleController cc = new ConsoleController();
-//		GUI_Controller gc = new GUI_Controller();
-		GUI_ControllerSortiment gcs = new GUI_ControllerSortiment();
+		GUI_Controller gc = new GUI_Controller();
+//		GUI_ControllerSortiment gcs = new GUI_ControllerSortiment();
 //		SortimentSim sm = new SortimentSim();
 //		Sortiment sort = new Sortiment(sm);
 //		System.out.println(Arrays.toString(sm.getSortiment()));

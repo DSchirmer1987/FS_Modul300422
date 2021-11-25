@@ -30,7 +30,7 @@ public class ConsoleController {
 				int input = Integer.parseInt(JOptionPane.showInputDialog("Artikelnummer eingeben"));
 				if (this.al.searchArtikel(input)) {
 					int menge = Integer.parseInt(JOptionPane.showInputDialog("Menge eingeben"));
-					this.kb.addEintrag(this.al.getArtikelFromList(input), menge);
+//					this.kb.addEintrag(this.al.getArtikelFromList(input), menge);
 					break;
 				} else {
 					System.out.println("Artikel nicht vorhanden");
