@@ -10,7 +10,8 @@ public class Sortiment {
 	public Sortiment(ISortimentSpeicher speicher) {
 		super();
 		this.speicher = speicher;
-		this.sortiment = (ArrayList<Produkt>) Arrays.asList(speicher.getSortiment());
+//		this.sortiment = (ArrayList<Produkt>) Arrays.asList(speicher.getSortiment());
+		this.sortiment = new ArrayList<Produkt>(Arrays.asList(speicher.getSortiment()));
 	}
 	
 	
