@@ -36,5 +36,8 @@ public class Produkt {
 		this.id = id;
 	}
 	
+	public String toString() {
+		return this.id + " - " + this.bezeichnung + " - " + this.preis;
+	}
 	
 }
