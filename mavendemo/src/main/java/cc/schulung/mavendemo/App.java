@@ -1,11 +1,8 @@
 package cc.schulung.mavendemo;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Scanner;
 
 /**
  * Hello world!
