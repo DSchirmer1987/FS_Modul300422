@@ -13,6 +13,7 @@ import project_kassenbon.model.Kassenbon;
 import project_kassenbon.model.KassenbonEintrag;
 import project_kassenbon.model.sortiment.Produkt;
 import project_kassenbon.model.sortiment.Sortiment;
+import project_kassenbon.model.sortiment.SortimentDBSpeicher;
 import project_kassenbon.model.sortiment.SortimentDateiSpeicher;
 import project_kassenbon.model.sortiment.SortimentSim;
 import project_kassenbon.view.ArtikelFrame;
@@ -53,7 +54,8 @@ public class GUI_ControllerSortiment {
 		kb = new Kassenbon();
 //		al = new Artikelliste();
 //		sortiment = new Sortiment(new SortimentSim());
-		sortiment = new Sortiment(new SortimentDateiSpeicher("src/sortiment.csv"));
+//		sortiment = new Sortiment(new SortimentDateiSpeicher("src/sortiment.csv"));
+		sortiment = new Sortiment(new SortimentDBSpeicher());
 //		generateArtikels();
 		
 		kf = new KassenFrame();
